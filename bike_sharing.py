@@ -52,7 +52,7 @@ season_option = st.sidebar.selectbox(
 )
 
 # Create columns to divide dashboard into 3
-col1, col2, col3 = st.columns((1.5, 3, 2), gap='medium')
+col1, col2, col3 = st.columns((3), gap='medium')
 
 # First column
 with col1:
