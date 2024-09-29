@@ -52,7 +52,7 @@ season_option = st.sidebar.selectbox(
 )
 
 # Create columns to divide dashboard into 3
-col1, col2, col3 = st.columns((3), gap='medium')
+col1, col2, col3 = st.columns((1, 2, 2), gap='medium')
 
 # First column
 with col1:
@@ -131,7 +131,7 @@ with col3:
     max_hour = hourly_data[hourly_data['yr'] == (year_option - 2011)]['cnt'].max()
     min_hour = hourly_data[hourly_data['yr'] == (year_option - 2011)]['cnt'].min()
 
-    mxday, mnday, mxhour, mnhour = st.columns(4)
+    mxday, mnday, mxhour, mnhour = st.columns(4, gap='small')
     mxday.metric(label='Peak Day', value=max_day)
     mnday.metric(label='Lowest Day', value=min_day)
     mxhour.metric(label='Peak Hour', value=max_hour)
@@ -140,7 +140,7 @@ with col3:
     # Weather occurrence during those year & season
     st.subheader('Weather Occurrences')
     # Draw the total year & season
-    clear, mist, light, heavy = st.columns(4)
+    clear, mist, light, heavy = st.columns(4, gap='small')
     # Extract counts for each weather condition
     counts = {
         'Clear/Cloudy': 0,
